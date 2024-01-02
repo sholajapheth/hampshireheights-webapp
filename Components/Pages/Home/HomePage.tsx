@@ -48,7 +48,7 @@ const HomePage = () => {
   return (
     <main>
       <div className="sticky top-0 z-40">
-        {showNotification && <Notification setShowNotification={setShowNotification} />}
+        {/* {showNotification && <Notification setShowNotification={setShowNotification} />} */}
 
       </div>
       <div className="bg-[url('../public/images/landingBg.png')] bg-cover bg-center h-[90vh] flex justify-center items-center">
