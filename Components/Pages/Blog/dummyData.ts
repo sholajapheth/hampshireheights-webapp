@@ -1,4 +1,4 @@
-import { BlogCardProps } from "@/Types/BlogCardType";
+import { BlogCardProps } from "@/types/BlogCardType";
 
 export   const blogPost: BlogCardProps[] = [
     {

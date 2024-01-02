@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import FeaturedPost from "./FeaturedPost";
 import BlogCard from "./BlogCard";
-import { BlogCardProps } from "@/Types/BlogCardType";
+import { BlogCardProps } from "@/types/BlogCardType";
 import Contact from "../../UI/Contact";
 import { blogPost } from "./dummyData";
 
