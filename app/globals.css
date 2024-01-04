@@ -27,3 +27,17 @@ body {
     @apply bg-gradient-to-b from-gray-200 to-white text-gray-900;
   }
 }
+
+
+@layer base {
+  @font-face {
+    font-family: 'GeneralSans-Medium';
+    src: url("../assets/fonts/GeneralSans-Medium.otf");
+  }
+}
+
+@layer base {
+  html {
+      font-family: 'GeneralSans-Medium', sans-serif;
+  }
+}
