@@ -28,7 +28,7 @@ const navigation = [
       },
       {
         name: "Delivering Leadership",
-        href: "/services/robotic-process-automation-artificial-intelligence",
+        href: "/services/delivery-leadership",
       },
       {
         name: "Technology Consulting",
