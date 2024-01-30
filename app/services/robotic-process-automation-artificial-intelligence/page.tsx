@@ -10,11 +10,11 @@ const page = () => {
           <p className="text-base uppercase">Services</p>
           <hr className="my-2 h-1 bg-primary" />
           <p className="text-2xl md:text-5xl font-bold uppercase ">
-          Robotic Process Automation <br />& Artificial Intelligence
+            Robotic Process Automation <br />& Artificial Intelligence
           </p>
         </div>
         <Image
-          src={"/images/d-transformation.png"}
+          src={"/images/robotic_bg.png"}
           width={500}
           height={500}
           className="w-full md:w-[70%] mt-8"
@@ -22,34 +22,48 @@ const page = () => {
         />
       </div>
 
-      <div className=" flex flex-col gap-6 items-center justify-center py-0 md:py-10 w-full md:w-[50%]">
-        <div className="border-t-primary border-b-primary border-t-2 border-b-2 p-4 md:p-6 ">
-          <p className="text-xl font-bold ">
-            The positive outcome of Digital Transformation projects are
-            essential to the on-going success of businesses across industries
-            around the world.
+      <div className=" flex flex-col gap-6 items-center justify-center py-0 md:py-10 w-full md:w-[70%]">
+        <div className=" p-4 md:p-6 ">
+          <p className="text-2xl md:text-5xl font-bold  ">
+            Robotic Process Automation
+          </p>
+          <p className=" text-[16px] md:text-[18px]  mt-5 ">
+            Our robotic process automation can be used to create a digital
+            workforce to automate high-volume repetitive tasks, maximizing your
+            knowledge and workers productivity by enabling them to focus on
+            higher-value activities.
           </p>
         </div>
 
         <Image
-          src={"/images/keyboard.png"}
+          src={"/images/browsers.png"}
           width={500}
           height={500}
           className="w-full "
           alt="keyboard"
         />
 
-        <p>
-          Serving businesses to evolve and stay competitive in an ever-shifting
-          and disruptive space. We embrace intelligent, technology enabled
-          systems across every layer of your business to succeed. At Hampshire
-          Heights, a big thrust of our strategy is to focus on human-centered
-          innovation.
-        </p>
+        <div className=" p-4 md:p-6 ">
+          <p className="text-2xl md:text-5xl font-bold  ">
+            Artificial Intelligence
+          </p>
+          <p className=" text-[16px] md:text-[18px]  mt-5">
+            While it’s a fact that AI has various use cases among different
+            industries and brings tangible results, it’s also difficult to
+            immediately decide how to use it. With deep learning, machine
+            learning, natural language processing, smart search engines or
+            predictive models supporting the decision-making processes, AI can
+            transform your business but before you implement AI in your company,
+            you need to be well-prepared. At Hampshire Heights, we support our
+            clients not only with code but also with our business expertise. You
+            will get algorithms that will work for you. Work not only
+            technically, but also bring benefits.
+          </p>
+        </div>
       </div>
 
-      <div className="my-5 md:my-10 w-full"/>
-        <Contact />
+      <div className="my-5 md:my-2 w-full" />
+      <Contact />
       {/* </div> */}
     </div>
   );

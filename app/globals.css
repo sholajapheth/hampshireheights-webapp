@@ -32,7 +32,7 @@ body {
 @layer base {
   @font-face {
     font-family: 'GeneralSans-Medium';
-    src: url("../assets/fonts/GeneralSans-Medium.otf");
+    src: url("../assets/fonts/Satoshi-Medium.otf");
   }
 }
 

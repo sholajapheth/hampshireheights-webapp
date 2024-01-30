@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Footer from "@/Components/UI/Footer";
-import { Header } from "@/Components";
+import AppWrapper from "@/Components/AppWraper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,13 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="absolute top-0 z-50 w-full">
-          <Header />
-        </div>
-        <div className="mt-16">{children}</div>
+      <body className={inter.className + "font-serif"}>
+        <AppWrapper>{children}</AppWrapper>
       </body>
-      <Footer />
     </html>
   );
 }

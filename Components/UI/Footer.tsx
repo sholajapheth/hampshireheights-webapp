@@ -51,11 +51,14 @@ const Footer = () => {
 
         <div className="flex-1 flex flex-col mt-8 md:mt-0 items-center ">
           <div>
-            <p>Quick Links</p>
+            <p className="font-bold mb-4">Quick Links</p>
             <div className="grid grid-cols-2">
               {quickLinks.map((link, index) => (
-                <p key={index} className="mt-2 pr-4">
-                  <u> {link.name}</u>
+                <p
+                  key={index}
+                  className="mt-2 pr-4 hover:underline cursor-pointer"
+                >
+                  {link.name}
                 </p>
               ))}
             </div>
@@ -64,23 +67,40 @@ const Footer = () => {
 
         <div className="flex-1  items-center justify-center  w-full">
           <div className="flex-1 flex flex-col ">
-            <p>Contact Us</p>
+            <p className="mb-4 font-bold">Contact Us</p>
             <div className="flex w-full items-center gap-2 text-nowrap mt-2">
               <BsPhone className="text-secondary" />
-              <p>+234 706 547 6756</p>
+              <p>+234 706 547 6756 (NG)</p>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex w-full items-center gap-2 text-nowrap mt-2">
+              <BsPhone className="text-secondary" />
+              <p>+44 (0) 7734 064533 (UK)</p>
+            </div>
+
+            <div className="flex w-full items-center gap-2 text-nowrap mt-2">
+              <BsPhone className="text-secondary" />
+              <p>+91 (0) 99004 01608 (IN)</p>
+            </div>
+            <div className="flex items-center gap-2 mt-3">
               <MdOutlineMail className="text-secondary" />
               <p>info@hhgcl.com</p>
             </div>
           </div>
 
           <div className="flex flex-row  items-center gap-6 mt-8 md:mt-4 ">
-            <FaFacebookF className="text-2xl text-white" />
-            <FaTwitter className="text-2xl text-white" />
-            <FaInstagram className="text-2xl text-white" />
-            <FaLinkedinIn className="text-2xl text-white" />
+            <button className="bg-none group hover:bg-white rounded-md p-2 transition-all ease-in-out duration-300">
+              <FaFacebookF className="text-2xl group-hover:text-primary text-white" />
+            </button>
+            <button className="bg-none group hover:bg-white rounded-md p-2 transition-all ease-in-out duration-300">
+              <FaTwitter className="text-2xl group-hover:text-primary text-white" />
+            </button>
+            <button className="bg-none group hover:bg-white rounded-md p-2 transition-all ease-in-out duration-300">
+              <FaInstagram className="text-2xl group-hover:text-primary text-white" />
+            </button>
+            <button className="bg-none group hover:bg-white rounded-md p-2 transition-all ease-in-out duration-300">
+              <FaLinkedinIn className="text-2xl group-hover:text-primary text-white" />
+            </button>
           </div>
         </div>
       </div>
