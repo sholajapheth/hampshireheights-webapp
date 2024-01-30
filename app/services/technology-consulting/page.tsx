@@ -34,11 +34,11 @@ const page = () => {
           <p className="text-base uppercase">Services</p>
           <hr className="my-2 h-1 bg-primary" />
           <p className="text-2xl md:text-5xl font-bold uppercase">
-            Delivery Leadership
+            Technology Consulting
           </p>
         </div>
         <Image
-          src={"/images/delivery_leadership.png"}
+          src={"/images/technology_consulting.png"}
           width={500}
           height={500}
           className="w-full md:w-[70%] mt-8"
