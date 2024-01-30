@@ -5,24 +5,24 @@ import React from "react";
 
 const accordion_data = [
   {
-    title: "PROGRAMME MANAGEMENT ",
+    title: "ARCHITECTURE ",
     detail:
-      "Delivering a complex programme of work usually starts with a vision of a changed organisation and the benefits that will accrue from the change. Importantly, those benefits are greater than the simple sum of benefits delivered by the individual projects with the programme itself having value. Our Programme Managers have experience of taking large-scale multi year/multi layer programmes from blueprinting right through to delivery with key skills focused around project coordination, benefits management and stakeholder management and communication.",
+      "Whether our architects are working as trusted advisors to our clients or embedded in their teams, we deeply immerse ourselves into technical challenges to ensure delivery of the desired outcome. Working at the enterprise level setting, direction and strategy or at the solution/ technology level ensuring that business needs will be met by the proposed platform, we leverage our knowledge and experience to accelerate delivery times and maximise benefits, while reducing and managing risk.",
   },
   {
-    title: "AGILE COACHING ",
+    title: "DEVELOPMENT ",
     detail:
-      "Delivering complex projects and programmes using Agile isne&lsquo;t always plain sailing. Our Agile Coaches have a deep understanding of a range of different agile and lean approaches, are experienced in embedding agile tools and techniques and have specific skills and experience in supporting scaled agile. They push decision making to the right level within the teams, not allowing unnecessary bureaucracy and structure to suppress innovation and delivery but are also agile pragmatists and help our customers align agile best practice with elements of waterfall where necessary.",
+      "We provide complete end to solution services for your business needs. We can create proof concepts and set up a cloud based deployment workstream with continuous integration. Our experts can also help you move your existing application into your own private cloud servers. We can work along with your existing team and perform code reviews and provide mentoring.",
   },
   {
-    title: "PROGRAMME MANAGEMENT ",
+    title: "TESTING AND QUALITY ASSURANCE ",
     detail:
-      "Our Project Managers take great pride in delivering projects for our clients to time, budget and to quality. Understanding the interrelationships between each of these dimensions is key to ensuring the project delivers and is seen as a success by all of its stakeholders. Our Project Managers have deep experience of leading projects through requirements capture, preparing a business case to justify investment through to developing and implementing the managing plan for the project. They are experts in leading and motivating the project delivery team, managing the risks, issues and changes on the project and monitoring progress against plan and budget whilst maintaining communications with stakeholders.",
+      "Our quality analysts work with businesses to define test scenarios and test cases for the evolving solutions and with the developers to implement the majority of these as automated tests.",
   },
   {
-    title: "SCRUM MASTERS ",
+    title: "CYBER SECURITY ",
     detail:
-      "Our Scrum Masters efficiently set up an agile environment for teams to build and iterate a user-centred digital service, work to remove obstacles or ‘blockers’ to progress and help their teams become better at prioritising and organising their own work. They have deep experience in establishing an appropriate physical environment, favouring co-location where possible with sufficient shared workspace and walls for teams to communicate openly and effectively, combined with experience in the best technical tools such as instant messaging and collaboration.",
+      "With the move to more open and connected systems, and as organisations look to leverage services such as Cloud Hosting to allow them to deliver more efficiently, Cyber Security and the need to understand and mitigate the risks to an organisation’s systems and information is critical. Many of our clients have been moving away from formal accreditation of their systems and instead are managing their own Risk Assessments and self-assuring through Security Architecture patterns and techniques, identifying and implementing appropriate people, process and technical controls and by using validation techniques such as penetration testing.",
   },
 ];
 
@@ -44,21 +44,6 @@ const page = () => {
           className="w-full md:w-[70%] mt-8"
           alt="digital transformation"
         />
-      </div>
-
-      <div className=" flex flex-col gap-6 items-center justify-center py-0 md:py-10 w-full md:w-[50%]">
-        <div className="border-t-primary border-b-primary border-t-2 border-b-2 p-4 md:p-6 ">
-          <p className="text-xl font-bold text-justify md:text-start ">
-            Combining more traditional approaches to service operations such as
-            ITIL with more iterative approaches such as properly empowered
-            WebOps and flexible provisioning and service platforms, our teams
-            continually look for the most appropriate and efficient approach to
-            providing operational services. Across our clients, we have
-            experience of designing and implementing efficient and repeatable
-            Incident management, request fulfilment, problem management,
-            application management and IT operations control capabilities.
-          </p>
-        </div>
       </div>
 
       <div className="flex flex-col items-center justify-center mt-12 px-4">
