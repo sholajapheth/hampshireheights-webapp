@@ -4,7 +4,7 @@ import Footer from "./UI/Footer";
 
 const AppWrapper = ({ children }: { children: ReactNode }) => {
   return (
-    <div className=" relative">
+    <div className=" relative ">
       <Header />
       <div className="my-[4em]" />
       {children}
