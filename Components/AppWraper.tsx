@@ -6,6 +6,7 @@ const AppWrapper = ({ children }: { children: ReactNode }) => {
   return (
     <div className=" relative">
       <Header />
+      <div className="my-[4em]" />
       {children}
       <Footer />
     </div>

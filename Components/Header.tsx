@@ -3,22 +3,54 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { RiEqualLine } from "react-icons/ri";
 import { AiOutlineClose } from "react-icons/ai";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "About Us", href: "about-us" },
-  { name: "Services", href: "services" },
-  { name: "Blog", href: "blog" },
+  { name: "About Us", href: "/about-us" },
+  {
+    name: "Services",
+    href: "/services",
+    subMenus: [
+      {
+        name: "Robotic Process Automation & AI",
+        href: "/services/robotic-process-automation-artificial-intelligence",
+      },
+      {
+        name: "Digitial Transformation",
+        href: "/services/digital-transformation",
+      },
+      {
+        name: "Business Consultuing",
+        href: "/services/robotic-process-automation-artificial-intelligence",
+      },
+      {
+        name: "Delivering Leadership",
+        href: "/services/robotic-process-automation-artificial-intelligence",
+      },
+      {
+        name: "Technology Consulting",
+        href: "/services/robotic-process-automation-artificial-intelligence",
+      },
+      {
+        name: "GDPR compliance Services",
+        href: "/services/robotic-process-automation-artificial-intelligence",
+      },
+    ],
+  },
+  { name: "Blog", href: "/blog" },
   { name: "Contact Us", href: "#" },
 ];
 
 const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const [isScrolled, setIsScrolled] = useState(false);
   const navUrl = usePathname();
+
+  const showSubMenu = useSearchParams().get("showSubMenu");
+  const isMenuOpen = useSearchParams().get("showNavMenu");
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
@@ -75,13 +107,18 @@ const Header = () => {
 
       {isMobile && (
         <div className="md:hidden transition-all  ">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="pr-1">
-            <RiEqualLine
-              className={`text-[2em] ${
-                isMenuOpen ? "animate-bounce duration-300" : ""
-              }`}
-            />
-          </button>
+          <Link
+            href={isMenuOpen ? "?showNavMenu=true" : "?showNavMenu=false"}
+            passHref
+          >
+            <button className="pr-1">
+              <RiEqualLine
+                className={`text-[2em] ${
+                  isMenuOpen ? "animate-bounce duration-300" : ""
+                }`}
+              />
+            </button>
+          </Link>
         </div>
       )}
 
@@ -92,29 +129,58 @@ const Header = () => {
             : "md:flex hidden"
         } gap-4 md:flex    `}
       >
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="p-1 inline md:hidden absolute top-4 right-4"
+        <Link
+          href={isMenuOpen ? "?showNavMenu=true" : "?showNavMenu=false"}
+          passHref
         >
-          <AiOutlineClose
-            className={`text-[2em] ${
-              isMenuOpen ? "animate-bounce duration-300" : ""
-            }`}
-          />
-        </button>
+          <button className="p-1 inline md:hidden absolute top-4 right-4">
+            <AiOutlineClose
+              className={`text-[2em] ${
+                isMenuOpen ? "animate-bounce duration-300" : ""
+              }`}
+            />
+          </button>
+        </Link>
 
         {navigation.map((link) => {
-          const isActive = navUrl.includes(link.href);
+          const isActive =
+            (link.href === "/" && navUrl === "/") ||
+            (link.href !== "/" && navUrl.includes(link.href));
           return (
-            <a
-              key={link.name}
-              href={link.href}
-              className={`text-base font-semibold text-primary  hover:font-bold  hover:text-secondary px-4 py-2 ${
-                isActive && "underline font-bold text-secondary"
+            <div
+              className={`relative flex-col items-center justify-center  ${
+                link.subMenus && showSubMenu && "text-center  mb-8 md:mb-0"
               }`}
+              key={link.name}
             >
-              {link.name}
-            </a>
+              <Link
+                href={link.subMenus ? "?showSubMenu=true" : link.href}
+                passHref
+              >
+                <button
+                  className={`text-base font-semibold text-primary  hover:font-bold   hover:text-secondary px-4 py-2 ${
+                    isActive && "underline font-bold text-secondary"
+                  }`}
+                >
+                  <span>{link.name}</span>
+                </button>
+              </Link>
+              {link.subMenus && showSubMenu && (
+                <div className="relative md:absolute top-8 backdrop-brightness-50 rounded-md  flex flex-col w-[15em]">
+                  {link.subMenus.map((item) => (
+                    <a
+                      href={item.href}
+                      className={`text-base font-semibold text-primary  hover:font-bold  hover:text-secondary px-4 py-2 ${
+                        isActive && "underline font-bold text-secondary"
+                      }`}
+                      key={item.name}
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
           );
         })}
       </div>
