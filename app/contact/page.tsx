@@ -1,5 +1,6 @@
 "use client";
 import Showcase from "@/Components/Pages/Home/Showcase";
+import Image from "next/image";
 import React from "react";
 import { BsPhone } from "react-icons/bs";
 
@@ -152,7 +153,102 @@ const page = () => {
           </div>
         </div>
       </div>
-      <Showcase />
+      <div className="w-full">
+        <Showcase />
+      </div>
+
+      <div className="flex flex-col items-center justify-center w-full">
+        <div className="w-full md:w-[90%] px-4 md:px-0 mt-8  relative">
+          <div className="w-full flex">
+            <div className="p-6 md:p-12 w-full md:w-[60%] mb-[6em]  bg-white rounded-md shadow-md">
+              <p className="text-[18px] md:text-[36px] font-bold text-primary">
+                Quick Message
+              </p>
+
+              <p>
+                Send us your quick message and we&lsquo;ll get back to you..
+              </p>
+
+              <div className="w-full mt-8">
+                <div className=" flex flex-col md:flex-row items-center gap-x-6 w-full ">
+                  <div className="mb-4 w-full">
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                      Fist name
+                    </label>
+                    <input
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="firstname"
+                      type="text"
+                      placeholder="First name"
+                    />
+                  </div>
+                  <div className="mb-4 w-full">
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                      Last name
+                    </label>
+                    <input
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="lastname"
+                      type="text"
+                      placeholder="Last name"
+                    />
+                  </div>
+                </div>
+
+                <div className="mb-4 w-full">
+                  <label className="block text-gray-700 text-sm font-bold mb-2">
+                    Email
+                  </label>
+                  <input
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="lastname"
+                    type="text"
+                    placeholder="you@company.com"
+                  />
+                </div>
+
+                <div className="mb-4 w-full">
+                  <label className="block text-gray-700 text-sm font-bold mb-2">
+                    Phone number
+                  </label>
+                  <input
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="lastname"
+                    type="text"
+                    placeholder="+1 (555) 000-0000"
+                  />
+                </div>
+
+                <div className="mb-4 w-full">
+                  <label className="block text-gray-700 text-sm font-bold mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="message"
+                    placeholder="Leave us a message..."
+                    rows={5}
+                  />
+                </div>
+
+                <button className="py-4 px-12 bg-primary text-white hover:bg-gray-400 hover:scale-95 hover:text-primary transition-all duration-300 ease-in-out">
+                  Get Started
+                </button>
+              </div>
+            </div>
+            <div className="md:absolute  -z-10 right-0 hidden md:inline ">
+              <Image
+                src={"/images/quick_form.png"}
+                width={200}
+                height={300}
+                alt="quick form "
+                layout="responsive"
+                className=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
