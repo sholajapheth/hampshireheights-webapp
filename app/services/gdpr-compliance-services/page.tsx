@@ -69,11 +69,11 @@ const page = () => {
           <p className="text-base uppercase">Services</p>
           <hr className="my-2 h-1 bg-primary" />
           <p className="text-2xl md:text-5xl font-bold uppercase">
-            Business Consulting
+            GDPR compliance Services
           </p>
         </div>
         <Image
-          src={"/images/business_consulting.png"}
+          src={"/images/compiliance_services.png"}
           width={500}
           height={500}
           className="w-full md:w-[70%] mt-8"
@@ -84,29 +84,14 @@ const page = () => {
       <div className=" flex flex-col gap-6 items-center justify-center py-0 md:py-10 w-full md:w-[50%]">
         <div className="border-t-primary border-b-primary border-t-2 border-b-2 p-4 md:p-6 ">
           <p className="text-xl font-bold text-justify md:text-start ">
-            Combining more traditional approaches to service operations such as
-            ITIL with more iterative approaches such as properly empowered
-            WebOps and flexible provisioning and service platforms, our teams
-            continually look for the most appropriate and efficient approach to
-            providing operational services. Across our clients, we have
-            experience of designing and implementing efficient and repeatable
-            Incident management, request fulfilment, problem management,
-            application management and IT operations control capabilities.
+            We offer Data Protection officer (DPO) consultancy services to
+            organisations across the globe. Our expert consultants will support
+            you to dymestify your obligations by aligning technology and
+            operations decision-making with data privacy standards and best
+            practices. Our data security experts have many years of experience
+            and expertise in data privacy as well as data protection impact
+            assessment.
           </p>
-        </div>
-      </div>
-
-      <div className="flex items-center justify-center mt-12">
-        <div className="w-full md:w-[80%] ">
-          {section_data.map((item, index) => (
-            <Section
-              key={item?.title}
-              title={item?.title}
-              text={item?.text}
-              image={item?.image}
-              index={index}
-            />
-          ))}
         </div>
       </div>
 

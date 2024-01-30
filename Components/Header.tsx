@@ -28,15 +28,15 @@ const navigation = [
       },
       {
         name: "Delivering Leadership",
-        href: "/services/robotic-process-automation-artificial-intelligence",
+        href: "/services/delivery-leadership",
       },
       {
         name: "Technology Consulting",
-        href: "/services/robotic-process-automation-artificial-intelligence",
+        href: "/services/technology-consulting",
       },
       {
         name: "GDPR compliance Services",
-        href: "/services/robotic-process-automation-artificial-intelligence",
+        href: "/services/gdpr-compliance-services",
       },
     ],
   },
