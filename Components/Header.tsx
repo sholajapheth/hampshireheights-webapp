@@ -41,7 +41,7 @@ const navigation = [
     ],
   },
   { name: "Blog", href: "/blog" },
-  { name: "Contact Us", href: "#" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 const Header = () => {

@@ -23,7 +23,7 @@ const page = () => {
       </div>
 
       <div className=" flex flex-col gap-6 items-center justify-center py-0 md:py-10 w-full md:w-[50%]">
-        <div className="border-t-primary border-b-primary border-t-2 border-b-2 p-4 md:p-6 ">
+        <div className="border-t-primary border-b-primary border-t-[1px] border-b-[1px] p-4 md:p-6 ">
           <p className="text-xl font-bold ">
             The positive outcome of Digital Transformation projects are
             essential to the on-going success of businesses across industries
@@ -48,8 +48,8 @@ const page = () => {
         </p>
       </div>
 
-      <div className="my-5 md:my-10 w-full"/>
-        <Contact />
+      <div className="my-5 md:my-10 w-full" />
+      <Contact />
       {/* </div> */}
     </div>
   );

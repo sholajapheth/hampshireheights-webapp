@@ -49,7 +49,6 @@ const HomePage = () => {
     <main>
       <div className="sticky top-0 z-40">
         {/* {showNotification && <Notification setShowNotification={setShowNotification} />} */}
-
       </div>
       <div className="bg-[url('../public/images/landingBg.png')] bg-cover bg-center h-[90vh] flex justify-center items-center">
         <div className="px-4 text-center md:text-left  text-white">
@@ -72,7 +71,7 @@ const HomePage = () => {
 
       <Showcase />
 
-      <div className="text-center  flex flex-col  items-center justify-center ">
+      <div className="text-center  flex flex-col  items-center justify-center mt-8 md:mt-14 ">
         <div className=" w-full md:w-[70%] lg:w-[60%]">
           <div className="items-center flex flex-col  w-full justify-center pb-10 ">
             <p className="text-2xl font-bold uppercase text-primary mb-4">
@@ -109,10 +108,8 @@ const HomePage = () => {
 
       <OurProcesses />
 
-
       <div className=" flex flex-col items-center justify-center md:px-16 p-4 mt-8 ">
-
-      <Contact />
+        <Contact />
       </div>
     </main>
   );
