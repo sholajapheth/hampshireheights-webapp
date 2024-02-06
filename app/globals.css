@@ -18,6 +18,17 @@
   }
 } */
 
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out; /* Adjust timing and easing as needed */
+}
+.submenu.open {
+  max-height: 500px; /* Adjust the maximum height according to your submenu content */
+}
+
+
+
 body {
 
 }

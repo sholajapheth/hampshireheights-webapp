@@ -5,4 +5,8 @@ export type BlogCardProps = {
   title: string;
   date: string;
   author: string;
+  authorImage: string;
+  aboutAuthor: string;
+  designation: string;
+  fullBlog?: { paragraph: string; bullets?: string[] }[];
 };

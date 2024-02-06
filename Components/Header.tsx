@@ -171,7 +171,7 @@ const Header = () => {
               </div>
 
               {link.subMenus && showSubMenu && (
-                <div className="relative md:absolute top-8 backdrop-brightness-50 rounded-md  flex flex-col w-full md:w-[15em]">
+                <div className="relative md:absolute top-8 bg-white py-4 shadow-md transition-all ease-in-out duration-300 flex flex-col w-full md:w-[15em] submenu open">
                   {link.subMenus.map((item) => (
                     <Link
                       href={item.href}
@@ -183,7 +183,7 @@ const Header = () => {
                       }}
                     >
                       <p
-                        className={`text-base font-semibold text-secondary  hover:font-bold  hover:text-white px-4 py-2 `}
+                        className={`text-base font-semibold text-primary hover:font-bold hover:text-secondary px-4 py-2`}
                       >
                         {item.name}
                       </p>
