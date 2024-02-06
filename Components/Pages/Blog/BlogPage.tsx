@@ -35,7 +35,6 @@ const BlogPage = () => {
     },
   ]);
 
-
   return (
     <div className=" ">
       <div className="bg-[#FAFAFA]  w-full flex flex-col  items-center  py-10 mb-10">
@@ -83,7 +82,7 @@ const BlogPage = () => {
           <div className="flex items-center flex-col">
             <FeaturedPost />
 
-            <div className="mt-8 md:mt-16 inline md:flex gap-8 mb-8 ">
+            <div className="mt-8 md:mt-16 inline md:grid lg:grid-cols-3 md:grid-cols-2 gap-8 mb-8 ">
               {blogPost.map((post, index) => (
                 <BlogCard key={index} post={post} />
               ))}

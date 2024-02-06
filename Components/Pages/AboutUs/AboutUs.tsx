@@ -37,7 +37,7 @@ const AboutUs = () => {
         />
       </div>
 
-      <div className="grid grid-cols-1  md:grid-cols-2 mt-20 w-[90%] border-[#787878] border-b-2 border-t-2 placeholder-gray-600 py-6 md:py-10">
+      <div className="grid grid-cols-1  md:grid-cols-2 mt-20 w-[90%] border-[#787878] border-b-[1px] border-t-[1px] placeholder-gray-600 py-6 md:py-10">
         <div className="flex flex-col gap-3 items-center mb-10 w-[100%] md:w-[80%]">
           <Image
             src="/images/enhance-business.png"
@@ -124,15 +124,11 @@ const AboutUs = () => {
         </div>
       </div>
       <div className="py-14 md:py-24  bg-[#FAFAFA] w-full mt-4 flex flex-col items-center justify-center">
-
         <Team />
 
-<div className="my-5 md:my-10"/>
+        <div className="my-5 md:my-10" />
         <Contact />
       </div>
-
-
-      
     </div>
   );
 };
