@@ -26,7 +26,7 @@ const Sliders = () => {
 
   return (
     <div
-      className={`${bgImage} bg-cover bg-center h-[40vh] md:h-[90vh] flex justify-center md:justify-start  items-center relative   transition-all duration-500 ease-in-out`}
+      className={`${bgImage} bg-cover bg-center h-[50vh] md:h-[90vh] flex justify-center md:justify-start  items-center relative   transition-all duration-500 ease-in-out`}
     >
       <div className="w-full ">
         <div className="px-4 md:pl-[5em] lg:pl-[8em] text-center md:text-left  text-white">
@@ -47,7 +47,7 @@ const Sliders = () => {
           </button>
         </div>
 
-        <div className="w-full flex justify-center items-center absolute bottom-16">
+        <div className="w-full flex justify-center items-center absolute bottom-8 md:bottom-16">
           <div className="flex items-center gap-4">
             {Array(images.length)
               .fill(0)
