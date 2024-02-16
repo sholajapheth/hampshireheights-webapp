@@ -155,7 +155,7 @@ const Header = () => {
             >
               <div
                 onClick={() => {
-                  router.push(link.href);
+                  if (!link?.subMenus) router.push(link.href);
                   link.subMenus ? toggleSubMenu() : setIsMenuOpen(false);
                 }}
                 className={`text-base font-semibold text-primary  hover:font-bold  flex gap-x-2 items-center cursor-pointer   hover:text-secondary px-4 py-2 ${
