@@ -53,6 +53,7 @@ const Sliders = () => {
               .fill(0)
               .map((_, index_) => (
                 <div
+                  onClick={() => setIndex(index)}
                   key={index_}
                   className={`h-[1em] ${
                     index_ === index

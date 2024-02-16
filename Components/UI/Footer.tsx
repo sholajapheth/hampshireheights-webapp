@@ -8,31 +8,32 @@ import {
   FaLinkedinIn,
   FaTwitter,
 } from "react-icons/fa6";
+import Link from "next/link";
 
 const quickLinks = [
   {
     name: "Delivery Leadership",
-    link: "/",
+    link: "/services/delivery-leadership",
   },
   {
     name: "Digital Transformation",
-    link: "/",
+    link: "/services/digital-transformation",
   },
   {
     name: "Technology Consulting",
-    link: "/",
+    link: "/services/technology-consulting",
   },
   {
     name: "Business Consulting",
-    link: "/",
+    link: "/services/business-consulting",
   },
   {
     name: "Artificial Intelligence",
-    link: "/",
+    link: "/services/robotic-process-automation-artificial-intelligence",
   },
   {
     name: "GDPR compliance Services",
-    link: "/",
+    link: "/services/gdpr-compliance-services",
   },
 ];
 
@@ -54,12 +55,14 @@ const Footer = () => {
             <p className="font-bold mb-4">Quick Links</p>
             <div className="grid grid-cols-2">
               {quickLinks.map((link, index) => (
-                <p
-                  key={index}
-                  className="mt-2 pr-4 hover:underline cursor-pointer"
-                >
-                  {link.name}
-                </p>
+                <Link href={link.link} passHref>
+                  <p
+                    key={index}
+                    className="mt-2 pr-4 hover:underline cursor-pointer"
+                  >
+                    {link.name}
+                  </p>
+                </Link>
               ))}
             </div>
           </div>
