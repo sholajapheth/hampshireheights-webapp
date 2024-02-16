@@ -53,13 +53,13 @@ const Sliders = () => {
               .fill(0)
               .map((_, index_) => (
                 <div
-                  onClick={() => setIndex(index)}
+                  onClick={() => setIndex(index_)}
                   key={index_}
                   className={`h-[1em] ${
                     index_ === index
                       ? "bg-white w-[2em]"
                       : "bg-gray-400/45 w-[1em]"
-                  } rounded-full`}
+                  } rounded-full cursor-pointer hover:scale-105 transition-all duration-200 ease-linear`}
                 />
               ))}
           </div>
