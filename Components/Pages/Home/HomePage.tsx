@@ -19,14 +19,14 @@ const Sliders = () => {
     // Auto-slide every 5 seconds
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % 3); // Increment index cyclically
-    }, 5000);
+    }, 10000);
 
     return () => clearInterval(interval); // Clear interval on component unmount
   }, []);
 
   return (
     <div
-      className={`${bgImage} bg-cover bg-center h-[40vh] md:h-[90vh] flex justify-center md:justify-start  items-center relative transition-all duration-300 ease-in-out`}
+      className={`${bgImage} bg-cover bg-center h-[40vh] md:h-[90vh] flex justify-center md:justify-start  items-center relative   transition-all duration-500 ease-in-out`}
     >
       <div className="w-full ">
         <div className="px-4 md:pl-[5em] lg:pl-[8em] text-center md:text-left  text-white">
