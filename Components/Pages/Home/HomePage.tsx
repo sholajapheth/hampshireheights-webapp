@@ -6,9 +6,72 @@ import OurMission from "./OurMission";
 import OurProcesses from "./OurProcesses";
 import Contact from "../../UI/Contact";
 
+const Sliders = () => {
+  const images = [
+    "bg-[url('../public/images/landingBg_1.png')]",
+    "bg-[url('../public/images/landingBg_2.png')]",
+    "bg-[url('../public/images/landingBg_3.png')]",
+  ];
+  const [index, setIndex] = useState(0);
+  const bgImage = images[index];
+
+  useEffect(() => {
+    // Auto-slide every 5 seconds
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % 3); // Increment index cyclically
+    }, 5000);
+
+    return () => clearInterval(interval); // Clear interval on component unmount
+  }, []);
+
+  return (
+    <div
+      className={`${bgImage} bg-cover bg-center h-[40vh] md:h-[90vh] flex justify-center md:justify-start  items-center relative transition-all duration-300 ease-in-out`}
+    >
+      <div className="w-full ">
+        <div className="px-4 md:pl-[5em] lg:pl-[8em] text-center md:text-left  text-white">
+          <h1 className="text-[2.5em] md:text-[5rem] lg:text-[8em]  leading-[.9em] ">
+            <span className="hidden md:inline">-</span> DIGITAL <br />{" "}
+            TRANSFORMATION
+          </h1>
+          <p className="my-8 text-base md:text-xl">
+            WE ENCOURAGE INTELLIGENT ,<br className="inline md:hidden" />{" "}
+            TECHNOLOGY BASED SYSTEMS <br className="hidden md:inline" /> ACROSS
+            EVERY BUSINESS TO SUCCEED
+          </p>
+
+          <button
+            className={`mt-4 px-[4em] py-[1em] bg-secondary font-semibold text-white  md:text-xl text-base  hover:bg-secondary-dark  duration-300 hover:scale-110 transform transition-all ease-in-out `}
+          >
+            READ MORE
+          </button>
+        </div>
+
+        <div className="w-full flex justify-center items-center absolute bottom-16">
+          <div className="flex items-center gap-4">
+            {Array(images.length)
+              .fill(0)
+              .map((_, index_) => (
+                <div
+                  key={index_}
+                  className={`h-[1em] ${
+                    index_ === index
+                      ? "bg-white w-[2em]"
+                      : "bg-gray-400/45 w-[1em]"
+                  } rounded-full`}
+                />
+              ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const HomePage = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showNotification, setShowNotification] = useState(true);
+  const [slider, setSlider] = useState(2);
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
@@ -50,24 +113,8 @@ const HomePage = () => {
       <div className="sticky top-0 z-40">
         {/* {showNotification && <Notification setShowNotification={setShowNotification} />} */}
       </div>
-      <div className="bg-[url('../public/images/landingBg.png')] bg-cover bg-center h-[90vh] flex justify-center items-center">
-        <div className="px-4 text-center md:text-left  text-white">
-          <h1 className="text-[2.5em] md:text-[5rem] lg:text-[8em] leading-[1em] font-semibold">
-            <span className="hidden md:inline">-</span> DIGITAL <br />{" "}
-            TRANSFORMATION
-          </h1>
-          <p className="mt-2 text-base md:text-xl">
-            WE ENCOURAGE INTELLIGENT , TECHNOLOGY BASED SYSTEMS{" "}
-            <br className="hidden md:inline" /> ACROSS EVERY BUSINESS TO SUCCEED
-          </p>
 
-          <button
-            className={`mt-4 px-8 py-4 bg-secondary font-semibold text-white  md:text-xl text-base  hover:bg-secondary-dark  duration-300 hover:scale-110 transform transition-all ease-in-out `}
-          >
-            READ MORE
-          </button>
-        </div>
-      </div>
+      <Sliders />
 
       <Showcase />
 
