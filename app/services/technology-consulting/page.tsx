@@ -47,7 +47,7 @@ const page = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center mt-12 px-4">
-        <div className="w-full md:w-[90%]">
+        <div className="w-full md:w-[80%]">
           {accordion_data.map((item) => (
             <Accordion
               key={item.title}
