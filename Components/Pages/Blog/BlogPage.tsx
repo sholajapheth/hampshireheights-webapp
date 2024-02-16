@@ -39,10 +39,10 @@ const BlogPage = () => {
     <div className=" ">
       <div className="bg-[#FAFAFA]  w-full flex flex-col  items-center  py-10 mb-10">
         <div className="w-[90%] md:w-[90%]  ">
-          <h1 className="text-primary text-3xl font-extrabold text-left my-6 md:my-12">
+          <h1 className="text-primary text-3xl font-extrabold text-left my-6 md:my-12 ">
             OUR BLOG
           </h1>
-          <div className=" hidden md:inline ">
+          {/* <div className=" hidden md:inline ">
             {blogNav.map((item) => (
               <button
                 onClick={() =>
@@ -73,7 +73,7 @@ const BlogPage = () => {
                 </option>
               ))}
             </select>
-          </div>
+          </div> */}
         </div>
       </div>
 
