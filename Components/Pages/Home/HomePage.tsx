@@ -5,12 +5,14 @@ import Showcase from "./Showcase";
 import OurMission from "./OurMission";
 import OurProcesses from "./OurProcesses";
 import Contact from "../../UI/Contact";
+import Link from "next/link";
 
 const Sliders = () => {
   const images = [
     "bg-[url('../public/images/landingBg_1.png')]",
     "bg-[url('../public/images/landingBg_2.png')]",
     "bg-[url('../public/images/landingBg_3.png')]",
+    "bg-[url('../public/images/landingBg_4.png')]",
   ];
   const [index, setIndex] = useState(0);
   const bgImage = images[index];
@@ -18,36 +20,73 @@ const Sliders = () => {
   useEffect(() => {
     // Auto-slide every 5 seconds
     const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % 3); // Increment index cyclically
+      setIndex((prevIndex) => (prevIndex + 1) % 4); // Increment index cyclically
     }, 10000);
 
     return () => clearInterval(interval); // Clear interval on component unmount
   }, []);
 
+  const text = (() => {
+    switch (index) {
+      case 0:
+        return {
+          header: "DIGITAL TRANSFORMATION",
+          tagline: `WE ENCOURAGE INTELLIGENT, 
+            TECHNOLOGY-BASED SYSTEMS ACROSS EVERY BUSINESS TO SUCCEED`,
+        };
+      case 1:
+        return {
+          header: "Develop outstanding products fast",
+          tagline: `Our team of IT experts and specialists \n\n
+            ensure businesses have the right IT solutions to succeed.`,
+        };
+      case 2:
+        return {
+          header: "Artificial Intelligence solutions for your business.",
+          tagline:
+            "Hampshire Heights create products that let people do things differently.",
+        };
+      case 3:
+        return {
+          header: "Better technology features for next-gen customers.",
+          tagline: `Share your challenges with our team and 
+            we will work with you to develop a revolutionary digital product.`,
+        };
+      default:
+        return {
+          header: "",
+          tagline: "",
+        };
+    }
+  })();
+
   return (
     <div
-      className={`${bgImage} bg-cover bg-center h-[50vh] md:h-[90vh] flex justify-center md:justify-start  items-center relative   transition-all duration-500 ease-in-out`}
+      className={`${bgImage} bg-cover bg-center h-[50vh] md:h-[90vh]  flex justify-center items-center relative   transition-all duration-500 ease-in-out`}
     >
       <div className="w-full ">
-        <div className="px-4 md:pl-[5em] lg:pl-[8em] text-center md:text-left  text-white">
-          <h1 className="text-[2.5em] md:text-[5rem] lg:text-[8em]  leading-[.9em] ">
-            <span className="hidden md:inline">-</span> DIGITAL <br />{" "}
-            TRANSFORMATION
+        <div className="px-4  text-center  text-white uppercase">
+          <h1 className="text-[2.5em] md:text-[4.5rem] lg:text-[8em]  leading-[.9em]  ">
+            {text?.header}
           </h1>
-          <p className="my-8 text-base md:text-xl">
-            WE ENCOURAGE INTELLIGENT ,<br className="inline md:hidden" />{" "}
-            TECHNOLOGY BASED SYSTEMS <br className="hidden md:inline" /> ACROSS
-            EVERY BUSINESS TO SUCCEED
-          </p>
+          <div className="flex items-center justify-center ">
+            <p className="my-8 text-base md:text-xl w-full md:w-[50%]">
+              {text.tagline}
+            </p>
+          </div>
 
-          <button
-            className={`mt-4 px-[4em] py-[1em] bg-secondary font-semibold text-white  md:text-xl text-base  hover:bg-secondary-dark  duration-300 hover:scale-110 transform transition-all ease-in-out `}
-          >
-            READ MORE
-          </button>
+          {index === 0 && (
+            <Link href={"/services/digital-transformation"} passHref>
+              <button
+                className={`mt-4 px-[4em] py-[1em] bg-secondary font-semibold text-white  md:text-xl text-base  hover:bg-secondary-dark  duration-300 hover:scale-110 transform transition-all ease-in-out `}
+              >
+                READ MORE
+              </button>
+            </Link>
+          )}
         </div>
 
-        <div className="w-full flex justify-center items-center absolute bottom-8 md:bottom-16">
+        <div className="w-full flex justify-center items-center absolute bottom-2 md:bottom-10 mt-8">
           <div className="flex items-center gap-4">
             {Array(images.length)
               .fill(0)
