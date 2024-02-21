@@ -66,7 +66,7 @@ const Sliders = () => {
     >
       <div className="w-full ">
         <div className="px-4  text-center  text-white uppercase">
-          <h1 className="text-[2.5em] md:text-[4.5rem] lg:text-[8em]  leading-[.9em]  ">
+          <h1 className="text-[2.4em] md:text-[4rem] lg:text-[6em]  leading-[.9em]  ">
             {text?.header}
           </h1>
           <div className="flex items-center justify-center ">
@@ -98,7 +98,7 @@ const Sliders = () => {
                     index_ === index
                       ? "bg-white w-[2em]"
                       : "bg-gray-400/45 w-[1em]"
-                  } rounded-full cursor-pointer hover:scale-105 transition-all duration-200 ease-linear`}
+                  } rounded-full cursor-pointer hover:scale-125 hover:bg-secondary/70 transition-all duration-200 ease-linear`}
                 />
               ))}
           </div>
