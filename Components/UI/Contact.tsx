@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Contact = () => {
@@ -6,16 +7,18 @@ const Contact = () => {
       <div>
         <p className="font-semibold">QUICK MESSAGE</p>
         <p className="font-extrabold text-3xl mt-4 w-full md:w-[60%] lg:w-[50%]">
-          Send us your quick message and we'll get back to you
+          Send us your quick message and we&apos;ll get back to you
         </p>
       </div>
       <div>
-        <button
-          className="bg-white  mt-8   py-4 font-bold text-primary hover:scale-105 transition-all duration-300 px-6 "
-          style={{ whiteSpace: "nowrap" }}
-        >
-          <p>CONTACT US</p>
-        </button>
+        <Link href={"/contact"} passHref>
+          <button
+            className="bg-white  mt-8   py-4 font-bold text-primary hover:scale-105 transition-all duration-300 px-6 "
+            style={{ whiteSpace: "nowrap" }}
+          >
+            <p>CONTACT US</p>
+          </button>
+        </Link>
       </div>
     </div>
   );

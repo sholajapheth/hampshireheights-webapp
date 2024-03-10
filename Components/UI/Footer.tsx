@@ -55,11 +55,8 @@ const Footer = () => {
             <p className="font-bold mb-4">Quick Links</p>
             <div className="grid grid-cols-2">
               {quickLinks.map((link, index) => (
-                <Link href={link.link} passHref>
-                  <p
-                    key={index}
-                    className="mt-2 pr-4 hover:underline cursor-pointer"
-                  >
+                <Link key={index} href={link.link} passHref>
+                  <p className="mt-2 pr-4 hover:underline cursor-pointer">
                     {link.name}
                   </p>
                 </Link>

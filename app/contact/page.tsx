@@ -1,7 +1,8 @@
 "use client";
 import Showcase from "@/Components/Pages/Home/Showcase";
+import axios from "axios";
 import Image from "next/image";
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 import { BsPhone } from "react-icons/bs";
 
 import {
@@ -11,7 +12,66 @@ import {
   Marker,
 } from "react-simple-maps";
 
+interface UserInfo {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: number | string;
+  message: string;
+}
+
 const page = () => {
+  const [userInfo, setUserInfo] = useState<UserInfo>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    message: "",
+  });
+  const [isSubmitting, setSubmitting] = useState(false);
+
+  const handleFormChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    field: keyof UserInfo
+  ) => {
+    setUserInfo({
+      ...userInfo,
+      [field]: e.target.value,
+    });
+  };
+
+  const submitForm = async () => {
+    const fullName = userInfo.firstName + " " + userInfo.lastName;
+    const data = { fullName, ...userInfo };
+    console.log(data);
+    setSubmitting(true);
+    try {
+      console.log("val: ", data);
+
+      const res = await axios.post("/api/contact", data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (res.status == 200 && res.statusText == "OK") {
+        alert("Message sent successfully");
+        setUserInfo({} as UserInfo);
+      } else {
+        alert("Something went wrong");
+      }
+      // console.log("res: ", JSON.stringify(res));
+      setSubmitting(false);
+
+      return res.data;
+    } catch (error) {
+      // Handle errors here
+      console.error("Error occurred:", error);
+      setSubmitting(false);
+      throw error; // Optionally rethrow the error
+    }
+  };
+
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="w-full md:w-[90%] px-4 md:px-0 mt-8">
@@ -180,6 +240,8 @@ const page = () => {
                       id="firstname"
                       type="text"
                       placeholder="First name"
+                      value={userInfo.firstName}
+                      onChange={(e) => handleFormChange(e, "firstName")}
                     />
                   </div>
                   <div className="mb-4 w-full">
@@ -191,6 +253,8 @@ const page = () => {
                       id="lastname"
                       type="text"
                       placeholder="Last name"
+                      onChange={(e) => handleFormChange(e, "lastName")}
+                      value={userInfo.lastName}
                     />
                   </div>
                 </div>
@@ -204,6 +268,8 @@ const page = () => {
                     id="lastname"
                     type="text"
                     placeholder="you@company.com"
+                    value={userInfo.email}
+                    onChange={(e) => handleFormChange(e, "email")}
                   />
                 </div>
 
@@ -214,8 +280,10 @@ const page = () => {
                   <input
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="lastname"
-                    type="text"
+                    type="tel"
                     placeholder="+1 (555) 000-0000"
+                    value={userInfo.phoneNumber}
+                    onChange={(e) => handleFormChange(e, "phoneNumber")}
                   />
                 </div>
 
@@ -228,11 +296,17 @@ const page = () => {
                     id="message"
                     placeholder="Leave us a message..."
                     rows={5}
+                    value={userInfo.message}
+                    onChange={(e) => handleFormChange(e, "message")}
                   />
                 </div>
 
-                <button className="py-4 px-12 bg-primary text-white hover:bg-gray-400 hover:scale-95 hover:text-primary transition-all duration-300 ease-in-out">
-                  Get Started
+                <button
+                  onClick={submitForm}
+                  disabled={isSubmitting}
+                  className="py-4 px-12 bg-primary text-white hover:bg-gray-400 hover:scale-95 hover:text-primary transition-all duration-300 ease-in-out"
+                >
+                  Send Message
                 </button>
               </div>
             </div>

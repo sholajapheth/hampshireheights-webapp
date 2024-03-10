@@ -52,14 +52,12 @@ const BlogDetails = ({ id }: { id: any }) => {
 
             <div className="mt-6 text-justify">
               {post?.fullBlog?.map((blog, index) => (
-                <div className="w-full text-wrap">
-                  <p className="leading-[2em]" key={index}>
-                    {blog.paragraph}
-                  </p>
+                <div className="w-full text-wrap" key={index}>
+                  <p className="leading-[2em]">{blog.paragraph}</p>
                   {blog.bullets && (
                     <ul className="list-disc">
-                      {blog.bullets.map((bullet) => (
-                        <li>{bullet}</li>
+                      {blog.bullets.map((bullet, index) => (
+                        <li key={index}>{bullet}</li>
                       ))}
                     </ul>
                   )}

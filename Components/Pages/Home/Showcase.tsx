@@ -28,8 +28,9 @@ const Showcase = () => {
       <p className="text-base md:text-xl">Trusted by great companies</p>
 
       <div className="flex items-center justify-between flex-wrap w-[90%] md:w-[80%] lg:w-[60%]  ">
-        {trustedCompanies.map((company) => (
+        {trustedCompanies.map((company, index) => (
           <Image
+            key={index}
             src={company.logo}
             width={100}
             height={100}
