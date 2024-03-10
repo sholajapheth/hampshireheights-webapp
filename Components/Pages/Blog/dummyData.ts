@@ -108,7 +108,7 @@ export const blogPost: BlogCardProps[] = [
   {
     id: 6,
     tag: "MANAGEMENT",
-    picture: "/images/blog5.png",
+    picture: "/images/blog7.png",
     title: "Project Management",
     date: "24 May 2023",
     author: " by Hampshire Heights",
