@@ -10,7 +10,7 @@ import Link from "next/link";
 const Sliders = () => {
   const images = [
     "bg-[url('../public/images/landingBg_1.png')]",
-    "bg-[url('../public/images/landingBg_2.png')]",
+    "bg-[url('../public/images/landingBg_2.jpg')]",
     "bg-[url('../public/images/landingBg_3.png')]",
     "bg-[url('../public/images/landingBg_4.png')]",
   ];

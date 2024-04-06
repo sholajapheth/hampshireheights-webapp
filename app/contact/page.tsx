@@ -20,7 +20,7 @@ interface UserInfo {
   message: string;
 }
 
-const page = () => {
+const Page = () => {
   const [userInfo, setUserInfo] = useState<UserInfo>({
     firstName: "",
     lastName: "",
@@ -327,4 +327,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

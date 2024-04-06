@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "npm run build &&  C:/cygwin64/bin/rsync --exclude=.git -azP . ubuntu@77.68.25.221:/home/ubuntu/apps/next-apps"
   },
   "dependencies": {
     "@sendgrid/mail": "^8.1.1",
